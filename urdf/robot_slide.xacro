@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<robot name="robot_slide" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="$(find rl_robot_slide)/urdf/robot_slide_macro.xacro" />
+
+		<xacro:slide_base_link_macro
+			slide_base_link_name="slide_base_link">
+		</xacro:slide_base_link_macro>
+
+		<xacro:slide_joint
+			name="first_slide_joint"
+			type="prismatic"
+			parent="slide_base_link"
+			child="first_slide_link">
+			<origin xyz="0 0 0.1" />
+			<axis xyz="1 0 0"/>
+		</xacro:slide_joint>
+
+		<xacro:slide_link name="first_slide_link">
+			<geometry>
+				<box size=" 0.5 0.5 0.2"/>
+			</geometry>
+			<origin xyz="0 0 0.1" rpy="0 0 0"/>
+		</xacro:slide_link>
+
+		<xacro:slide_joint_fixed
+			name="second_slide_joint"	
+			parent="first_slide_link"
+			child="base_link">
+			<origin xyz="0 0 0.2" />
+		</xacro:slide_joint_fixed>
+		
+		 <xacro:include filename="$(find rl_seven_degrees_robot)/urdf/robot.xacro" />
+</robot>

@@ -1,0 +1,32 @@
+digraph G {
+node [shape=box];
+"slide_base_link" [label="slide_base_link"];
+"first_slide_link" [label="first_slide_link"];
+"base_link" [label="base_link"];
+"first_link" [label="first_link"];
+"second_link" [label="second_link"];
+"third_link" [label="third_link"];
+"fourth_link" [label="fourth_link"];
+"fifth_link" [label="fifth_link"];
+"sixth_link" [label="sixth_link"];
+"seventh_link" [label="seventh_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"slide_base_link" -> "first_slide_joint" [label="xyz: 0 0 0.1 \nrpy: 0 -0 0"]
+"first_slide_joint" -> "first_slide_link"
+"first_slide_link" -> "second_slide_joint" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"second_slide_joint" -> "base_link"
+"base_link" -> "first_joint" [label="xyz: 0 0 0.1 \nrpy: 0 -0 0"]
+"first_joint" -> "first_link"
+"first_link" -> "second_joint" [label="xyz: 0.05 0 0.15 \nrpy: 0 -0 0"]
+"second_joint" -> "second_link"
+"second_link" -> "third_joint" [label="xyz: 0.15 0 0.05 \nrpy: 0 -0 0"]
+"third_joint" -> "third_link"
+"third_link" -> "fourth_joint" [label="xyz: 0.05 0 0.15 \nrpy: 0 -0 0"]
+"fourth_joint" -> "fourth_link"
+"fourth_link" -> "fifth_joint" [label="xyz: -0.25 0 0.05 \nrpy: 0 -0 0"]
+"fifth_joint" -> "fifth_link"
+"fifth_link" -> "sixth_joint" [label="xyz: 0.05 0 0.15 \nrpy: 0 -0 0"]
+"sixth_joint" -> "sixth_link"
+"sixth_link" -> "seventh_joint" [label="xyz: 0.15 0 0.05 \nrpy: 0 -0 0"]
+"seventh_joint" -> "seventh_link"
+}
